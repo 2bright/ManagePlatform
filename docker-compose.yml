@@ -12,7 +12,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
     volumes:
-      - E:\redis_data:/data
+      - ./storage/redis_data:/data
   mysql:
     image: mysql:5.6
     container_name: mysql
@@ -26,7 +26,7 @@ services:
       MYSQL_USER: 'MuggleLee'
       MYSQL_PASS: 'qwedsazxc123'
     volumes:
-      - E:\mysql_data:/data
+      - ./storage/mysql_data:/data
     command:
       --default-authentication-plugin=mysql_native_password
   rabbitmq:
@@ -38,7 +38,7 @@ services:
     hostname: rabbitmq
     restart: always
     volumes:
-      - E:\rabbitmq_data:/data
+      - ./storage/rabbitmq_data:/data
     environment:
       - TZ=Asia/Shanghai
       - RABBITMQ_DEFAULT_USER=MuggleLee
@@ -58,7 +58,12 @@ services:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx32m'
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   ConfigCenter:
     image: com.hao/config-center:1.0
     ports:
@@ -71,10 +76,15 @@ services:
     depends_on:
       - RegisterCenter
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx128m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   ManageBackend:
     image: com.hao/manage-backend:1.0
     ports:
@@ -92,10 +102,15 @@ services:
 #      - GatewayCenter
     restart: always
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx512m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   LogCenter:
     image: com.hao/log-center:1.0
     ports:
@@ -110,10 +125,15 @@ services:
 #      - mysql
     restart: always
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx128m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   NotificationCenter:
     image: com.hao/notification-center:1.0
     ports:
@@ -128,10 +148,15 @@ services:
 #      - rabbitmq
 #      - mysql
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx128m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   UserCenter:
     image: com.hao/user-center:1.0
     ports:
@@ -146,10 +171,15 @@ services:
 #      - rabbitmq
 #      - mysql
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx512m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   OauthCenter:
     image: com.hao/oauth-center:1.0
     ports:
@@ -164,10 +194,15 @@ services:
 #      - rabbitmq
 #      - mysql
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx256m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   GatewayCenter:
     image: com.hao/gateway-center:1.0
     ports:
@@ -182,10 +217,15 @@ services:
 #      - RegisterCenter
 #      - mysql
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx128m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   FileCenter:
     image: com.hao/file-center:1.0
     ports:
@@ -198,10 +238,15 @@ services:
 #      - RegisterCenter
 #      - mysql
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx128m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   MonitorCenter:
     image: com.hao/monitor-center:1.0
     ports:
@@ -216,5 +261,10 @@ services:
       - TZ=Asia/Shanghai
       - JAVA_OPTS='-Xmx128m'
     volumes:
-      - E:\logs:/logs/
+      - ./storage/logs:/logs/
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
 
