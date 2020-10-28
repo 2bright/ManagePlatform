@@ -21,9 +21,10 @@ spring:
     virtual-host: /
   mail:
     default-encoding: UTF-8
-    host: smtp.163.com
-    username: 18320628585@163.com
-    password: 987654321Muggle
+    host: smtp.qq.com
+    port: 587
+    username: l.wen.jie@qq.com
+    password: zmeiqamjnilthcjb
     protocol: smtp
     test-connection: false
 #      properties:
