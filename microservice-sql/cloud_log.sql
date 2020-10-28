@@ -13,6 +13,9 @@ File Encoding         : 65001
 Date: 2019-11-04 00:04:27
 */
 
+CREATE DATABASE IF NOT EXISTS cloud_log;
+USE cloud_log;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------

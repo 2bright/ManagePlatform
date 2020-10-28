@@ -13,6 +13,9 @@ File Encoding         : 65001
 Date: 2019-11-04 00:05:05
 */
 
+CREATE DATABASE IF NOT EXISTS cloud_zipkin;
+USE cloud_zipkin;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------

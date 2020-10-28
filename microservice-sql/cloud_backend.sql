@@ -13,6 +13,9 @@ File Encoding         : 65001
 Date: 2019-11-04 00:03:57
 */
 
+CREATE DATABASE IF NOT EXISTS cloud_backend;
+USE cloud_backend;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------

@@ -13,6 +13,9 @@ File Encoding         : 65001
 Date: 2019-11-04 00:04:46
 */
 
+CREATE DATABASE IF NOT EXISTS cloud_oauth;
+USE cloud_oauth;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------

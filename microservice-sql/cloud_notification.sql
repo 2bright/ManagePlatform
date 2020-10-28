@@ -13,6 +13,9 @@ File Encoding         : 65001
 Date: 2019-11-04 00:04:38
 */
 
+CREATE DATABASE IF NOT EXISTS cloud_notification;
+USE cloud_notification;
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
