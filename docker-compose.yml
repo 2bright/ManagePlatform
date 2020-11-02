@@ -156,6 +156,23 @@ services:
         limits:
           cpus: '2'
           memory: 256M
+  DeviceCenter:
+    image: com.hao/device-center:1.0
+    ports:
+      - "9010:9010"
+    container_name: DeviceCenter
+    restart: always
+    volumes:
+      - ./DeviceCenter/target/device-center.jar:/device-center.jar
+      - ./storage/logs:/logs/
+    environment:
+      - TZ=Asia/Shanghai
+      - JAVA_OPTS='-Xmx256m'
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
   UserCenter:
     image: com.hao/user-center:1.0
     ports:
