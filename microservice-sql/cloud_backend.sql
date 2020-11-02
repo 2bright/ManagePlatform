@@ -17,6 +17,7 @@ CREATE DATABASE IF NOT EXISTS cloud_backend;
 USE cloud_backend;
 
 SET FOREIGN_KEY_CHECKS=0;
+SET NAMES 'utf8';
 
 -- ----------------------------
 -- Table structure for black_ip

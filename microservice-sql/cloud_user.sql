@@ -17,6 +17,7 @@ CREATE DATABASE IF NOT EXISTS cloud_user;
 USE cloud_user;
 
 SET FOREIGN_KEY_CHECKS=0;
+SET NAMES 'utf8';
 
 -- ----------------------------
 -- Table structure for app_user

@@ -17,6 +17,7 @@ CREATE DATABASE IF NOT EXISTS cloud_log;
 USE cloud_log;
 
 SET FOREIGN_KEY_CHECKS=0;
+SET NAMES 'utf8';
 
 -- ----------------------------
 -- Table structure for t_log

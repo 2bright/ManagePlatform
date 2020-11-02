@@ -17,6 +17,7 @@ CREATE DATABASE IF NOT EXISTS cloud_notification;
 USE cloud_notification;
 
 SET FOREIGN_KEY_CHECKS=0;
+SET NAMES 'utf8';
 
 -- ----------------------------
 -- Table structure for t_sms

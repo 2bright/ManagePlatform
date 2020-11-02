@@ -17,6 +17,7 @@ CREATE DATABASE IF NOT EXISTS cloud_oauth;
 USE cloud_oauth;
 
 SET FOREIGN_KEY_CHECKS=0;
+SET NAMES 'utf8';
 
 -- ----------------------------
 -- Table structure for oauth_client_details

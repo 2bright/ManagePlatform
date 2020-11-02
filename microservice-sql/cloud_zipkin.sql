@@ -17,6 +17,7 @@ CREATE DATABASE IF NOT EXISTS cloud_zipkin;
 USE cloud_zipkin;
 
 SET FOREIGN_KEY_CHECKS=0;
+SET NAMES 'utf8';
 
 -- ----------------------------
 -- Table structure for zipkin_annotations

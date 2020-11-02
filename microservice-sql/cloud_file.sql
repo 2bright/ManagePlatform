@@ -17,6 +17,7 @@ CREATE DATABASE IF NOT EXISTS cloud_file;
 USE cloud_file;
 
 SET FOREIGN_KEY_CHECKS=0;
+SET NAMES 'utf8';
 
 -- ----------------------------
 -- Table structure for file_info
