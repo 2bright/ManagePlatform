@@ -170,6 +170,7 @@ services:
 #      - rabbitmq
 #      - mysql
     volumes:
+      - ./UserCenter/target/user-center.jar:/user-center.jar
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
@@ -185,8 +186,8 @@ services:
       - "8082:8082"
     container_name: OauthCenter
     restart: always
-    depends_on:
-      - UserCenter
+    #depends_on:
+      #- UserCenter
 #    links:
 #      - RegisterCenter
 #      - redis

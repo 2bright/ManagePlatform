@@ -47,6 +47,17 @@ INSERT INTO `app_user` VALUES ('2', 'superadmin', '$2a$10$8ETcPqld2uKNXCBBeCRAcO
 INSERT INTO `app_user` VALUES ('15', 'Tourist', '$2a$10$lLyM2vQiRIkV/shKfjry9e1s5Z2rBBsz.hjLJgJY8yXpuiKvd5Fe.', '游客', null, null, '1', '1', 'BACKEND', '2019-11-02 19:29:38', '2019-11-02 19:29:38');
 
 -- ----------------------------
+-- Table structure for customer
+-- ----------------------------
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE `customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+  `username` varchar(50) NOT NULL COMMENT '用户名',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='客户表';
+
+-- ----------------------------
 -- Table structure for sys_permission
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_permission`;
