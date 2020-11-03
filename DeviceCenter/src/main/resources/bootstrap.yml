@@ -10,7 +10,7 @@ spring:
       #是否启动快速失败功能，功能开启则优先判断config server是否正常
       fail-fast: true
 server:
-  port: 8091
+  port: 9010
 eureka:
   client:
     serviceUrl:
