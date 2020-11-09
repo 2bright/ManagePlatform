@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo docker-compose --compatibility $*
-docker-compose --compatibility $*

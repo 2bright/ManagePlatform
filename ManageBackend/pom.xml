@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.hao</groupId>
@@ -12,7 +11,6 @@
     <version>1.0</version>
     <name>ManageBackend</name>
     <packaging>jar</packaging>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -23,8 +21,8 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>org.mybatis.spring.boot</groupId>-->
-            <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
+        <!--<groupId>org.mybatis.spring.boot</groupId>-->
+        <!--<artifactId>mybatis-spring-boot-starter</artifactId>-->
         <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -73,7 +71,6 @@
             <version>3.2.0</version>
         </dependency>
     </dependencies>
-
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
@@ -90,7 +87,7 @@
                     <imageName>${project.groupId}/${project.artifactId}:${project.version}</imageName>
                     <baseImage>openjdk:8-jdk-alpine</baseImage>
                     <maintainer>MuggleLee</maintainer>
-                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                    <entryPoint>["sh", "-c", "java $JAVA_OPTS -jar /${project.build.finalName}.jar spring.profiles.active=dev"]</entryPoint>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -103,5 +100,4 @@
             <!-- Docker maven plugin -->
         </plugins>
     </build>
-
 </project>

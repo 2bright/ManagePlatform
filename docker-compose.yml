@@ -55,14 +55,9 @@ services:
     restart: always
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx32m'
+      - JAVA_OPTS=-Xmx32m
     volumes:
       - ./storage/logs:/logs/
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
   ConfigCenter:
     image: com.hao/config-center:1.0
     ports:
@@ -78,12 +73,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx128m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx128m
   ManageBackend:
     image: com.hao/manage-backend:1.0
     ports:
@@ -104,12 +94,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx512m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx512m
   LogCenter:
     image: com.hao/log-center:1.0
     ports:
@@ -127,12 +112,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx128m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx128m
   NotificationCenter:
     image: com.hao/notification-center:1.0
     ports:
@@ -150,12 +130,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx128m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx128m
   DeviceCenter:
     image: com.hao/device-center:1.0
     ports:
@@ -167,12 +142,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx256m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx256m
   UserCenter:
     image: com.hao/user-center:1.0
     ports:
@@ -191,12 +161,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx512m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx512m
   OauthCenter:
     image: com.hao/oauth-center:1.0
     ports:
@@ -214,12 +179,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx256m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx256m
   GatewayCenter:
     image: com.hao/gateway-center:1.0
     ports:
@@ -237,12 +197,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx128m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx128m
   FileCenter:
     image: com.hao/file-center:1.0
     ports:
@@ -258,12 +213,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx128m'
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
+      - JAVA_OPTS=-Xmx128m
   MonitorCenter:
     image: com.hao/monitor-center:1.0
     ports:
@@ -276,14 +226,9 @@ services:
 #      - RegisterCenter
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS='-Xmx128m'
+      - JAVA_OPTS=-Xmx128m
     volumes:
       - ./storage/logs:/logs/
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 256M
 
 volumes:
     mysql-volume: {}

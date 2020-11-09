@@ -56,3 +56,8 @@ cd ../MonitorCenter
 docker ps -a | sed '/^CONTAINER/d' | grep "MonitorCenter" | gawk '{cmd="docker rm -f "$1; system(cmd)}'
 docker images | sed '/^IMAGE/d' | grep "monitor" | gawk '{cmd="docker rmi "$3; system(cmd)}'
 mvn clean package docker:build -Dmaven.test.skip;
+cd ../DeviceCenter
+
+docker ps -a | sed '/^CONTAINER/d' | grep "DeviceCenter" | gawk '{cmd="docker rm -f "$1; system(cmd)}'
+docker images | sed '/^IMAGE/d' | grep "device-center" | gawk '{cmd="docker rmi "$3; system(cmd)}'
+mvn clean package docker:build -Dmaven.test.skip;
