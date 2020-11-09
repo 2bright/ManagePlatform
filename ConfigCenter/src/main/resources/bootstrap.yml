@@ -7,7 +7,7 @@ spring:
     config:
       server:
         native:
-          search-locations: classpath:/configs/dev/
+          search-locations: file:/configs
 #          search-locations: classpath:/configs/{profile}
 #        git:
 #          uri: https://github.com/MuggleLee/microservice-config

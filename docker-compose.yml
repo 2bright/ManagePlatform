@@ -48,10 +48,6 @@ services:
       - "8086:8086"
     hostname: "RegisterCenter"
     container_name: "RegisterCenter"
-    depends_on:
-      - redis
-      #- mysql
-      - rabbitmq
     restart: always
     environment:
       - TZ=Asia/Shanghai
@@ -65,11 +61,8 @@ services:
     hostname: "ConfigCenter"
     container_name: "ConfigCenter"
     restart: always
-#    links:
-#      - RegisterCenter
-    depends_on:
-      - RegisterCenter
     volumes:
+      - ./configs:/configs/
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
@@ -80,15 +73,6 @@ services:
       - "8092:8092"
     container_name: ManageBackend
     hostname: ManageBackend
-    depends_on:
-      - ConfigCenter
-      - rabbitmq
-#    links:
-#      - redis
-#      - rabbitmq
-#      - mysql
-#      - RegisterCenter
-#      - GatewayCenter
     restart: always
     volumes:
       - ./storage/logs:/logs/
@@ -100,13 +84,6 @@ services:
     ports:
       - "8088:8088"
     container_name: LogCenter
-    depends_on:
-      - ConfigCenter
-#    links:
-#      - RegisterCenter
-#      - redis
-#      - rabbitmq
-#      - mysql
     restart: always
     volumes:
       - ./storage/logs:/logs/
@@ -119,13 +96,6 @@ services:
       - "8090:8090"
     container_name: NotificationCenter
     restart: always
-    depends_on:
-      - ConfigCenter
-#    links:
-#      - RegisterCenter
-#      - redis
-#      - rabbitmq
-#      - mysql
     volumes:
       - ./storage/logs:/logs/
     environment:
@@ -149,13 +119,6 @@ services:
       - "8091:8091"
     container_name: UserCenter
     restart: always
-    depends_on:
-      - NotificationCenter
-#    links:
-#      - RegisterCenter
-#      - redis
-#      - rabbitmq
-#      - mysql
     volumes:
       - ./UserCenter/target/user-center.jar:/user-center.jar
       - ./storage/logs:/logs/
@@ -168,13 +131,6 @@ services:
       - "8082:8082"
     container_name: OauthCenter
     restart: always
-    #depends_on:
-      #- UserCenter
-#    links:
-#      - RegisterCenter
-#      - redis
-#      - rabbitmq
-#      - mysql
     volumes:
       - ./storage/logs:/logs/
     environment:
@@ -187,12 +143,6 @@ services:
     container_name: "GatewayCenter"
     hostname: "GatewayCenter"
     restart: always
-    depends_on:
-      - ConfigCenter
-      - ManageBackend
-#    links:
-#      - RegisterCenter
-#      - mysql
     volumes:
       - ./storage/logs:/logs/
     environment:
@@ -204,11 +154,6 @@ services:
       - "8089:8089"
     container_name: FileCenter
     restart: always
-    depends_on:
-      - ConfigCenter
-#    links:
-#      - RegisterCenter
-#      - mysql
     volumes:
       - ./storage/logs:/logs/
     environment:
@@ -220,10 +165,6 @@ services:
       - "9001:9001"
     container_name: MonitorCenter
     restart: always
-    depends_on:
-      - RegisterCenter
-#    links:
-#      - RegisterCenter
     environment:
       - TZ=Asia/Shanghai
       - JAVA_OPTS=-Xmx256m
