@@ -55,7 +55,7 @@ services:
     restart: always
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx32m
+      - JAVA_OPTS=-Xmx256m
     volumes:
       - ./storage/logs:/logs/
   ConfigCenter:
@@ -73,7 +73,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx128m
+      - JAVA_OPTS=-Xmx256m
   ManageBackend:
     image: com.hao/manage-backend:1.0
     ports:
@@ -94,7 +94,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx512m
+      - JAVA_OPTS=-Xmx256m
   LogCenter:
     image: com.hao/log-center:1.0
     ports:
@@ -112,7 +112,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx128m
+      - JAVA_OPTS=-Xmx256m
   NotificationCenter:
     image: com.hao/notification-center:1.0
     ports:
@@ -130,7 +130,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx128m
+      - JAVA_OPTS=-Xmx256m
   DeviceCenter:
     image: com.hao/device-center:1.0
     ports:
@@ -161,7 +161,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx512m
+      - JAVA_OPTS=-Xmx256m
   OauthCenter:
     image: com.hao/oauth-center:1.0
     ports:
@@ -197,7 +197,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx128m
+      - JAVA_OPTS=-Xmx256m
   FileCenter:
     image: com.hao/file-center:1.0
     ports:
@@ -213,7 +213,7 @@ services:
       - ./storage/logs:/logs/
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx128m
+      - JAVA_OPTS=-Xmx256m
   MonitorCenter:
     image: com.hao/monitor-center:1.0
     ports:
@@ -226,7 +226,7 @@ services:
 #      - RegisterCenter
     environment:
       - TZ=Asia/Shanghai
-      - JAVA_OPTS=-Xmx128m
+      - JAVA_OPTS=-Xmx256m
     volumes:
       - ./storage/logs:/logs/
 
